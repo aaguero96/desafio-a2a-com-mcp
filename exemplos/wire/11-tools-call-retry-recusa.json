@@ -1,0 +1,80 @@
+{
+  "descricao": "Retry com action decline: conclui sem reservar, com isError ausente ou falso e reservado igual a false no structuredContent.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "reservar_sala"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 12,
+      "method": "tools/call",
+      "params": {
+        "name": "reservar_sala",
+        "arguments": {
+          "sala": "sala-fusca",
+          "inicio": "2026-11-03T16:00:00-03:00",
+          "fim": "2026-11-03T17:00:00-03:00",
+          "responsavel": "Jennifer"
+        },
+        "inputResponses": {
+          "__main__:escolha_de_sala": {
+            "action": "decline"
+          }
+        },
+        "requestState": "v1.ChSULl8A11IML6smqcE8kFprckTg4PedwAkBKYe31CXia6E9mIcXvZnqK7aNAM1FEnT44mPz82pASVPRHY8kB-ZKDDRcD7O_OIZ59BrVApSO9Nx1OH7g9vIXh-GeC2S5r9N2A5xQ-iAplgQ04mqZCLbCGzCEjdvXVNY7Ode4vdki-_It1_k20_Vq23QOyW4T2F7hWyLr2YKKamSbOdgn4q7o1KQ_PMMnZMhRQ1y1fdnsN2RYynpmKxRjyCVCI3FHWGW98AM6VrynlTHsg_7-Qtuo2VbxaShZwzUpvPDWQr6eR7v91FxP_ZBVod65_l6ZIiAhXBl6zNBw5pW3NiHwUis1T8lESBhnw7pqEhXMsuvTO9qp8O8",
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          },
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 12,
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"reserva\": null,\n  \"reservado\": false,\n  \"sala\": null,\n  \"inicio\": null,\n  \"fim\": null,\n  \"responsavel\": null,\n  \"politica\": null,\n  \"motivo\": \"recusado\"\n}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+          "reserva": null,
+          "reservado": false,
+          "sala": null,
+          "inicio": null,
+          "fim": null,
+          "responsavel": null,
+          "politica": null,
+          "motivo": "recusado"
+        },
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "central-de-salas",
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  }
+}

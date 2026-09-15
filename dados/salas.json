@@ -1,0 +1,7 @@
+[
+  { "id": "sala-aquario", "nome": "Aquario", "capacidade": 4, "recursos": ["tv"] },
+  { "id": "sala-porao", "nome": "Porao", "capacidade": 6, "recursos": ["quadro"] },
+  { "id": "sala-garagem", "nome": "Garagem", "capacidade": 12, "recursos": ["tv", "quadro"] },
+  { "id": "sala-fusca", "nome": "Fusca", "capacidade": 12, "recursos": ["tv"] },
+  { "id": "sala-mirante", "nome": "Mirante", "capacidade": 20, "recursos": ["tv", "quadro", "camera"] }
+]

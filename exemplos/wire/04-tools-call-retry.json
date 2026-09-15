@@ -1,0 +1,83 @@
+{
+  "descricao": "Retry do mesmo tools/call com id novo, levando inputResponses e o requestState ecoado sem modificacao.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "reservar_sala"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "tools/call",
+      "params": {
+        "name": "reservar_sala",
+        "arguments": {
+          "sala": "sala-garagem",
+          "inicio": "2026-11-03T14:00:00-03:00",
+          "fim": "2026-11-03T15:00:00-03:00",
+          "responsavel": "Marty"
+        },
+        "inputResponses": {
+          "__main__:escolha_de_sala": {
+            "action": "accept",
+            "content": {
+              "sala": "sala-fusca"
+            }
+          }
+        },
+        "requestState": "v1.ChSULhPTQFmhFaa1JD_cOZAOLthermsAclsGLBhonYIs69R9BmVUhFbGQZUPlD85AIywa3IWX1BJJxHUg0WVZ6vK5lJTudbZDhH4nP3H9CUUPVlX0MmYxoS1PXxc1LmlmkkmRV0u-9bt9BRf1r4dBdqzwzOcZ7YfHGg-UWIr-RpmBuyDz9DF34SeN9HEOwm2n4QbdishctCvZme5j-rl4803eDQSnOuW2wKqd3pKwBki_G6dybNVa_Ihz8AyzFeLOzkaCU0g1Kj33tpOuPXoPMbpGM9aAh-w6Cy6LkKO037BHkJhoM4LMwoyORzk1kQlUlJDIfXfRwtpuUG042VkHA68F7RwDm99TQ-31qLTD3UGyQA4LPAJqQ",
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          },
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"reserva\": \"res-0004\",\n  \"reservado\": true,\n  \"sala\": \"sala-fusca\",\n  \"inicio\": \"2026-11-03T14:00:00-03:00\",\n  \"fim\": \"2026-11-03T15:00:00-03:00\",\n  \"responsavel\": \"Marty\",\n  \"politica\": \"2026-11-01\",\n  \"motivo\": null\n}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+          "reserva": "res-0004",
+          "reservado": true,
+          "sala": "sala-fusca",
+          "inicio": "2026-11-03T14:00:00-03:00",
+          "fim": "2026-11-03T15:00:00-03:00",
+          "responsavel": "Marty",
+          "politica": "2026-11-01",
+          "motivo": null
+        },
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "central-de-salas",
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  }
+}

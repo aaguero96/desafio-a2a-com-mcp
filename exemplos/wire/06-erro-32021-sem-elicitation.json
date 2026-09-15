@@ -1,0 +1,55 @@
+{
+  "descricao": "O mesmo conflito, vindo de cliente que nao declarou a capability de elicitation.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "reservar_sala"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "method": "tools/call",
+      "params": {
+        "name": "reservar_sala",
+        "arguments": {
+          "sala": "sala-garagem",
+          "inicio": "2026-11-03T14:00:00-03:00",
+          "fim": "2026-11-03T15:00:00-03:00",
+          "responsavel": "Marty"
+        },
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {},
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 400,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "error": {
+        "code": -32021,
+        "message": "Client did not declare the form elicitation capability required by resolver '__main__:escolha_de_sala'",
+        "data": {
+          "requiredCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

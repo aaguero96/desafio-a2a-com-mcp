@@ -1,0 +1,4 @@
+[
+  { "id": "res-0001", "sala": "sala-garagem", "inicio": "2026-11-03T14:00:00-03:00", "fim": "2026-11-03T15:00:00-03:00", "responsavel": "Marty" },
+  { "id": "res-0002", "sala": "sala-fusca", "inicio": "2026-11-03T16:00:00-03:00", "fim": "2026-11-03T17:00:00-03:00", "responsavel": "Jennifer" }
+]

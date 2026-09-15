@@ -1,0 +1,84 @@
+{
+  "descricao": "Conflito: o servidor responde input_required com a elicitation e o requestState. A chave de inputRequests e atribuida pelo servidor, o cliente devolve a mesma.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "reservar_sala"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "tools/call",
+      "params": {
+        "name": "reservar_sala",
+        "arguments": {
+          "sala": "sala-garagem",
+          "inicio": "2026-11-03T14:00:00-03:00",
+          "fim": "2026-11-03T15:00:00-03:00",
+          "responsavel": "Marty"
+        },
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          },
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "inputRequests": {
+          "__main__:escolha_de_sala": {
+            "method": "elicitation/create",
+            "params": {
+              "message": "A sala pedida esta ocupada nesse intervalo. Escolha uma alternativa.",
+              "mode": "form",
+              "requestedSchema": {
+                "properties": {
+                  "sala": {
+                    "description": "Sala alternativa escolhida",
+                    "enum": [
+                      "sala-fusca",
+                      "sala-mirante"
+                    ],
+                    "title": "Sala",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sala"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "requestState": "v1.ChSULhPTQFmhFaa1JD_cOZAOLthermsAclsGLBhonYIs69R9BmVUhFbGQZUPlD85AIywa3IWX1BJJxHUg0WVZ6vK5lJTudbZDhH4nP3H9CUUPVlX0MmYxoS1PXxc1LmlmkkmRV0u-9bt9BRf1r4dBdqzwzOcZ7YfHGg-UWIr-RpmBuyDz9DF34SeN9HEOwm2n4QbdishctCvZme5j-rl4803eDQSnOuW2wKqd3pKwBki_G6dybNVa_Ihz8AyzFeLOzkaCU0g1Kj33tpOuPXoPMbpGM9aAh-w6Cy6LkKO037BHkJhoM4LMwoyORzk1kQlUlJDIfXfRwtpuUG042VkHA68F7RwDm99TQ-31qLTD3UGyQA4LPAJqQ",
+        "resultType": "input_required",
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "central-de-salas",
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  }
+}

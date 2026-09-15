@@ -1,0 +1,77 @@
+{
+  "descricao": "SendMessage pedindo uma sala ocupada: a Task para em TASK_STATE_INPUT_REQUIRED.",
+  "request": {
+    "url": "http://127.0.0.1:7300/a2a",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "SendMessage",
+      "params": {
+        "message": {
+          "messageId": "msg-6ae2ad6802e5",
+          "role": "ROLE_USER",
+          "parts": [
+            {
+              "text": "reservar sala=sala-garagem inicio=2026-11-03T14:00:00-03:00 fim=2026-11-03T15:00:00-03:00 responsavel=Marty"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "task": {
+          "id": "task-3f658e57d468",
+          "contextId": "ctx-b125fd5a6174",
+          "status": {
+            "state": "TASK_STATE_INPUT_REQUIRED",
+            "message": {
+              "messageId": "msg-5f36afcd2f76",
+              "role": "ROLE_AGENT",
+              "parts": [
+                {
+                  "text": "alternativas: sala-mirante"
+                }
+              ],
+              "taskId": "task-3f658e57d468",
+              "contextId": "ctx-b125fd5a6174"
+            }
+          },
+          "history": [
+            {
+              "messageId": "msg-6ae2ad6802e5",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "reservar sala=sala-garagem inicio=2026-11-03T14:00:00-03:00 fim=2026-11-03T15:00:00-03:00 responsavel=Marty"
+                }
+              ]
+            },
+            {
+              "messageId": "msg-5f36afcd2f76",
+              "role": "ROLE_AGENT",
+              "parts": [
+                {
+                  "text": "alternativas: sala-mirante"
+                }
+              ],
+              "taskId": "task-3f658e57d468",
+              "contextId": "ctx-b125fd5a6174"
+            }
+          ],
+          "artifacts": []
+        }
+      }
+    }
+  }
+}

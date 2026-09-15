@@ -1,0 +1,109 @@
+{
+  "descricao": "Continuacao referenciando a Task: o agente repete o tools/call com id novo e conclui.",
+  "request": {
+    "url": "http://127.0.0.1:7300/a2a",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "SendMessage",
+      "params": {
+        "message": {
+          "messageId": "msg-441d0aa3db41",
+          "role": "ROLE_USER",
+          "parts": [
+            {
+              "text": "escolha=sala-mirante"
+            }
+          ],
+          "taskId": "task-3f658e57d468"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "task": {
+          "id": "task-3f658e57d468",
+          "contextId": "ctx-b125fd5a6174",
+          "status": {
+            "state": "TASK_STATE_COMPLETED",
+            "message": {
+              "messageId": "msg-3888926ca166",
+              "role": "ROLE_AGENT",
+              "parts": [
+                {
+                  "text": "Reserva res-0005 confirmada na sala-mirante."
+                }
+              ],
+              "taskId": "task-3f658e57d468",
+              "contextId": "ctx-b125fd5a6174"
+            }
+          },
+          "history": [
+            {
+              "messageId": "msg-6ae2ad6802e5",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "reservar sala=sala-garagem inicio=2026-11-03T14:00:00-03:00 fim=2026-11-03T15:00:00-03:00 responsavel=Marty"
+                }
+              ]
+            },
+            {
+              "messageId": "msg-5f36afcd2f76",
+              "role": "ROLE_AGENT",
+              "parts": [
+                {
+                  "text": "alternativas: sala-mirante"
+                }
+              ],
+              "taskId": "task-3f658e57d468",
+              "contextId": "ctx-b125fd5a6174"
+            },
+            {
+              "messageId": "msg-441d0aa3db41",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "escolha=sala-mirante"
+                }
+              ],
+              "taskId": "task-3f658e57d468"
+            },
+            {
+              "messageId": "msg-3888926ca166",
+              "role": "ROLE_AGENT",
+              "parts": [
+                {
+                  "text": "Reserva res-0005 confirmada na sala-mirante."
+                }
+              ],
+              "taskId": "task-3f658e57d468",
+              "contextId": "ctx-b125fd5a6174"
+            }
+          ],
+          "artifacts": [
+            {
+              "artifactId": "art-7259ff515ec2",
+              "name": "reserva",
+              "parts": [
+                {
+                  "text": "{\"reserva\": \"res-0005\", \"sala\": \"sala-mirante\", \"inicio\": \"2026-11-03T14:00:00-03:00\", \"fim\": \"2026-11-03T15:00:00-03:00\", \"responsavel\": \"Marty\", \"politica\": \"2026-11-01\"}"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

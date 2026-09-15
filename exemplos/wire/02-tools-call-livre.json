@@ -1,0 +1,74 @@
+{
+  "descricao": "Reserva em intervalo livre: o resultado ja vem completo.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "tools/call",
+      "Mcp-Name": "reservar_sala"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tools/call",
+      "params": {
+        "name": "reservar_sala",
+        "arguments": {
+          "sala": "sala-aquario",
+          "inicio": "2026-11-03T09:00:00-03:00",
+          "fim": "2026-11-03T10:00:00-03:00",
+          "responsavel": "Doc"
+        },
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          },
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"reserva\": \"res-0003\",\n  \"reservado\": true,\n  \"sala\": \"sala-aquario\",\n  \"inicio\": \"2026-11-03T09:00:00-03:00\",\n  \"fim\": \"2026-11-03T10:00:00-03:00\",\n  \"responsavel\": \"Doc\",\n  \"politica\": \"2026-11-01\",\n  \"motivo\": null\n}",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+          "reserva": "res-0003",
+          "reservado": true,
+          "sala": "sala-aquario",
+          "inicio": "2026-11-03T09:00:00-03:00",
+          "fim": "2026-11-03T10:00:00-03:00",
+          "responsavel": "Doc",
+          "politica": "2026-11-01",
+          "motivo": null
+        },
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "central-de-salas",
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  }
+}

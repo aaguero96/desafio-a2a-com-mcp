@@ -1,0 +1,60 @@
+{
+  "descricao": "Leitura do resource da politica de uso.",
+  "request": {
+    "url": "http://127.0.0.1:7301/mcp",
+    "metodo": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json, text/event-stream",
+      "MCP-Protocol-Version": "2026-07-28",
+      "Mcp-Method": "resources/read",
+      "Mcp-Name": "politica://uso"
+    },
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "method": "resources/read",
+      "params": {
+        "uri": "politica://uso",
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "agente-central-de-salas",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": {
+            "elicitation": {
+              "form": {}
+            }
+          },
+          "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "httpStatus": 200,
+    "body": {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "result": {
+        "cacheScope": "private",
+        "contents": [
+          {
+            "mimeType": "text/markdown",
+            "text": "versao: 2026-11-01\n\n- Reservas somente entre 08:00 e 20:00, horario de Sao Paulo (-03:00).\n- Duracao maxima de 2 horas por reserva.\n- Uma sala nao pode ter duas reservas sobrepostas.\n",
+            "uri": "politica://uso"
+          }
+        ],
+        "resultType": "complete",
+        "ttlMs": 0,
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "central-de-salas",
+            "version": "1.0.0"
+          }
+        }
+      }
+    }
+  }
+}
