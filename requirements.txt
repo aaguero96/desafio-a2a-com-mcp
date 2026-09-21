@@ -1,0 +1,5 @@
+# Espelho de [project.dependencies] do pyproject.toml, que e o travamento oficial.
+mcp==2.2.0
+starlette==1.6.0
+uvicorn==0.53.0
+pydantic==2.13.5
