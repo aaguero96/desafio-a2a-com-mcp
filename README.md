@@ -52,8 +52,22 @@ export REQUEST_STATE_SECRET=<o valor gerado no passo 2>
 
 No PowerShell: `$env:REQUEST_STATE_SECRET = "<valor>"`.
 
-Você também pode copiar `.env.example` para `.env` e carregá-lo com
-`set -a && . ./.env && set +a`. O `.env` está no `.gitignore`.
+Você também pode copiar `.env.example` para `.env` e carregá-lo. Em bash:
+
+```bash
+set -a && . ./.env && set +a
+```
+
+No PowerShell (que não tem `&&` nem `source`):
+
+```powershell
+Get-Content .env | Where-Object { $_ -match '^\s*[^#].*=' } | ForEach-Object {
+    $nome, $valor = $_.Split('=', 2)
+    Set-Item -Path "env:$($nome.Trim())" -Value $valor.Trim()
+}
+```
+
+O `.env` está no `.gitignore` e nunca vai para o repositório.
 
 **4. Suba o servidor MCP** (terminal 1, deixe o stderr visível):
 
